@@ -22,3 +22,13 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# for mac
+
+.DS_Store
+.env
+npm-debug.log
+.idea/
+.vscode/
+node_modules/
+
