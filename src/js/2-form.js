@@ -17,12 +17,10 @@ function onSubmitForm(evt) {
   if (isEmpty()) {
     return alert('Fill please all fields');
   }
-  console.log(
-    'KEY in localeStorage "feedback-form-state": ',
-    JSON.parse(localStorage.getItem('feedback-form-state'))
-  );
-  localStorage.removeItem('feedback-form-state');
-  form.reset();
+  console.log(formData);
+  resetValue();
+  // localStorage.removeItem('feedback-form-state');
+  // form.reset();
 }
 
 function onSaveInputUser() {
@@ -44,6 +42,13 @@ function isEmpty() {
   return !(
     form.elements.email.value.trim() && form.elements.message.value.trim()
   );
+}
+
+function resetValue() {
+  localStorage.removeItem('feedback-form-state');
+  form.reset();
+  formData.email = '';
+  formData.message = '';
 }
 
 checkingStorage();
